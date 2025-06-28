@@ -4,7 +4,7 @@ A SAS package to place miscellaneous macros, functions, etc.
 
 The repo will be collaborative work.  
 
-# %xpt2sas  
+## %xpt2sas  
 Purpose:     This macro converts xpt files into sas7bdat files.  
 
 Sample code:  
