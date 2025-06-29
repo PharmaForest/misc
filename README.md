@@ -1,6 +1,7 @@
 # misc
 A SAS package to place miscellaneous macros, functions, etc.  
-![misc](./misc_logo_small.png)   
+<img src="./misc_logo_small.png" width="250"/>
+
 
 The repo will be collaborative work.  
 
