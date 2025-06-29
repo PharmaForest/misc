@@ -19,3 +19,11 @@ Sample code:
 Author: Ryo Nakaya  
 Date: 2025-06-28  
 Version: 0.1  
+
+## Version history
+0.0.1(28June2025)	: Initial version
+
+## What is SAS Packages?
+misc is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
+For more information about SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).  
+You can also find more SAS Packages(SASPACs) in [SASPAC](https://github.com/SASPAC).
