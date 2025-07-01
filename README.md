@@ -21,6 +21,18 @@ Author: Ryo Nakaya
 Date: 2025-06-28  
 Version: 0.1  
 
+## %minimize_charlen.sas
+Purpose:     The macro analyzes all character variables in the dataset,  determines the maximum length actually used, and alters the table to adjust each variable's length accordingly.
+
+Sample code:  
+
+~~~sas
+%minimize_charlen(dm)
+~~~
+~~~sas
+%minimize_charlen(class, inlib=sashelp, outlib=work)
+~~~
+
 ## Version history
 0.0.1(28June2025)	: Initial version
 
