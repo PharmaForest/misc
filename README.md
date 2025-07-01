@@ -38,7 +38,7 @@ Date: 2025-07-02
 Version: 0.1  
 
 ## Version history
-0.0.1(28June2025)	: Initial version
+0.0.1(28June2025)	: Initial version 　<br>
 0.0.2(02July2025)	: Add %minimize_charlen.sas
 
 ## What is SAS Packages?
