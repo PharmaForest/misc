@@ -9,8 +9,9 @@
 ### Version information:
   
 - Package: misc
-- Version: 0.0.1
+- Version: 0.0.2
 - Generated: 2025-06-28T15:42:27
+- Last update: 2025-07-02T07:24:21
 - Author(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - Maintainer(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - License: MIT
@@ -19,7 +20,7 @@
   
 ---
  
-# The `misc` package, version: `0.0.1`;
+# The `misc` package, version: `0.0.2`;
   
 ---
  
@@ -79,7 +80,36 @@ The `misc` package consists of the following content:
 
   
 ---
+
+ ---
  
+## `%minimize_charlen()` macro <a name="minimize_charlen-macros-2"></a> ######
+
+%minimize_charlen` is a macro to minimize the length of character variables 
+based on actual data values.
+
+### Parameters
+  - `ds` : dataset name (without libref; defaults to `WORK` if no libref specified)
+  - `inlib =` : input library name (default: `WORK`)
+  - `outlib = ` : output library name (default: `WORK`)
+
+### Sample code
+
+~~~sas
+%minimize_charlen(dm)
+~~~
+~~~sas
+%minimize_charlen(class, inlib=sashelp, outlib=work)
+~~~
+
+### Notes
+- The macro analyzes all character variables in the specified dataset,
+  determines the maximum length actually used, and alters the table to adjust
+  each variable's length accordingly.
+- If `inlib` and `outlib` are different, the input dataset is copied before adjustment.
+- If the dataset has 0 observations, the macro will print a warning and do nothing.
+  
+---
   
 ---
  
