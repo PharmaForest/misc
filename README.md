@@ -6,7 +6,7 @@ A SAS package to place miscellaneous macros, functions, etc.
 The repo will be collaborative work.  
 
 ## %xpt2sas  
-Purpose:     This macro converts xpt files into sas7bdat files.  
+Purpose:     This macro converts xpt files in the folder into sas7bdat files.  
 
 Sample code:  
 
@@ -38,8 +38,9 @@ Date: 2025-07-02
 Version: 0.1  
 
 ## Version history
+0.0.2(02July2025)	: Add %minimize_charlen.sas  
 0.0.1(28June2025)	: Initial version 　<br>
-0.0.2(02July2025)	: Add %minimize_charlen.sas
+
 
 ## What is SAS Packages?
 Misc is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
