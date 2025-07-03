@@ -37,7 +37,33 @@ Author: Yutaka Morioka
 Date: 2025-07-02  
 Version: 0.1  
 
+## %roundsig.sas, %rounddec.sas
+Purpose:     roundsig:This macro performs rounding based on the specified number of significant digits.. rounddec:Rounds a numeric variable to the specified number of decimal places and converts it to a character variable.
+
+
+~~~sas
+%roundSig(trgVal=RES,Sig=3);
+
+/*Only integer values can be assigned to the "Sig" parameter.
+For example, if set to "3",
+"1.234" becomes "1.23", 
+"12.34" becomes "12.3", 
+"12.34" becomes "12.3", 
+"123.4" becomes "123", 
+"1234"  becomes "1230".*/
+~~~
+~~~sas
+%roundDec(trgVal=RES,dec=1);
+~~~
+
+Author: Hiroki Yamanobe  
+Date: 2025-07-03  
+Version: 0.3  
+
+
+
 ## Version history
+0.0.3(03July2025)	: Add %rounddec.sas, roundsig.sas
 0.0.2(02July2025)	: Add %minimize_charlen.sas  
 0.0.1(28June2025)	: Initial version 　<br>
 
