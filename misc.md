@@ -9,18 +9,17 @@
 ### Version information:
   
 - Package: misc
-- Version: 0.0.2
-- Generated: 2025-06-28T15:42:27
-- Last update: 2025-07-02T07:24:21
+- Version: 0.0.3
+- Generated: 2025-07-03T13:31:51
 - Author(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - Maintainer(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - License: MIT
-- File SHA256: `F*1E5D052D5B8895A2767ADAF90649F2D608EEA68BC2BBAFC243C26EAC103616E7` for this version
-- Content SHA256: `C*C3EDD2344D4C907411E08009E9AC04195B05D994F86952C767B46483807E6602` for this version
+- File SHA256: `F*6F6DF497DA637818E4CB01919E58B203902AC5927487850A784F942F19A1868B` for this version
+- Content SHA256: `C*91537A3B5D50E257E8F8C08F6EAB3062C5F706D0A3DA318B1DE7C7253FE73A96` for this version
   
 ---
  
-# The `misc` package, version: `0.0.2`;
+# The `misc` package, version: `0.0.3`;
   
 ---
  
@@ -50,42 +49,19 @@ Required SAS Components:
 # The `misc` package content
 The `misc` package consists of the following content:
  
-1. [`%xpt2sas()` macro ](#xpt2sas-macros-1 )
+1. [`%minimize_charlen()` macro ](#minimizecharlen-macros-1 )
+2. [`%rounddec()` macro ](#rounddec-macros-2 )
+3. [`%roundsig()` macro ](#roundsig-macros-3 )
+4. [`%xpt2sas()` macro ](#xpt2sas-macros-4 )
   
  
-2. [License note](#license)
-  
----
- 
-## `%xpt2sas()` macro <a name="xpt2sas-macros-1"></a> ######
-
-`%xpt2sas` is a macro to convert xpt files into sas7bdat files.
-
-### Parameters
-	- `indir` : full path for directory with xpt files
-
-	- `outdir` : full path for directory where sas7bdat files will be output
-
-### Sample code
-
-~~~sas
-%xpt2sas(
-	indir=C:\place\for\xpts,
-	outdir=C:\place\for\sas7bdat
-)
-~~~
-
-### Notes
-- All of xpt files are converted to sas7bdat files
-
+5. [License note](#license)
   
 ---
-
- ---
  
-## `%minimize_charlen()` macro <a name="minimize_charlen-macros-2"></a> ######
-
-%minimize_charlen` is a macro to minimize the length of character variables 
+## `%minimize_charlen()` macro <a name="minimizecharlen-macros-1"></a> ######
+/*
+`%minimize_charlen` is a macro to minimize the length of character variables 
 based on actual data values.
 
 ### Parameters
@@ -108,8 +84,84 @@ based on actual data values.
   each variable's length accordingly.
 - If `inlib` and `outlib` are different, the input dataset is copied before adjustment.
 - If the dataset has 0 observations, the macro will print a warning and do nothing.
+
   
 ---
+ 
+## `%rounddec()` macro <a name="rounddec-macros-2"></a> ######
+
+* MACRO NAME: rounrdDec
+*
+* PURPOSE:
+*   
+*   Rounds a numeric variable to the specified number of decimal places and 
+*   converts it to a character variable.
+*
+* PARAMETERS:
+*   trgVal     : (Required) The target variable.
+*   dec        : (Required) Number of decimal places. 
+*
+* USAGE:
+*   %rounrdDec(trgVal=RES,dec=1);
+*
+* NOTES:
+*   - Only integer values can be assigned to the "dec" parameter. 
+*   - For example, if set to "3", "1.234" convert to "1.23".
+
+  
+---
+ 
+## `%roundsig()` macro <a name="roundsig-macros-3"></a> ######
+
+* MACRO NAME: roundSig
+*
+* PURPOSE:
+*   This macro performs rounding based on the specified number of 
+*   significant digits.
+*
+* PARAMETERS:
+*   trgVal     : (Required) The target Value.
+*   SIG        : (Required) Number of significant digits. 
+*
+* USAGE:
+*   %roundSig(trgVal=RES,Sig=3);
+*
+* NOTES:
+*   - Only integer values can be assigned to the "Sig" parameter. 
+*   - For example, if set to "3", 
+*     "1.234" becomes "1.23", 
+*     "12.34" becomes "12.3", 
+*     "12.34" becomes "12.3", 
+*     "123.4" becomes "123", 
+*     "1234"  becomes "1230".
+* 
+  
+---
+ 
+## `%xpt2sas()` macro <a name="xpt2sas-macros-4"></a> ######
+
+`%xpt2sas` is a macro to convert xpt files into sas7bdat files.
+
+### Parameters
+	- `indir` : full path for directory with xpt files
+
+	- `outdir` : full path for directory where sas7bdat files will be output
+
+### Sample code
+
+~~~sas
+%xpt2sas(
+	indir=C:\place\for\xpts,
+	outdir=C:\place\for\sas7bdat
+)
+~~~
+
+### Notes
+- All of xpt files are converted to sas7bdat files
+
+  
+---
+ 
   
 ---
  
