@@ -69,7 +69,7 @@ Version: 0.3
 
 
 ## What is SAS Packages?
-Misc is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
+The package is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
 For more information about SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).  
 You can also find more SAS Packages(SASPACs) in [SASPAC](https://github.com/SASPAC).
 
