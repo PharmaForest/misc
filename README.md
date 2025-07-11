@@ -12,8 +12,8 @@ Sample code:
 
 ~~~sas  
 %xpt2sas(
-	indir=C:\place\for\xpt,   /* Directory with xpt files */
-	outdir=C:\place\for\sas7bdat   /* Directory for sas7bdat files */
+	indir=C:\place\for\xpt,		/* Directory with xpt files */
+	outdir=C:\place\for\sas7bdat	/* Directory for sas7bdat files */
  )
 ~~~  
 
