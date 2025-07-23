@@ -9,24 +9,22 @@
 ### Version information:
   
 - Package: misc
-- Version: 0.0.3
-- Generated: 2025-07-03T13:31:51
+- Version: 0.0.4
+- Generated: 2025-07-23T22:14:21
 - Author(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - Maintainer(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - License: MIT
-- File SHA256: `F*6F6DF497DA637818E4CB01919E58B203902AC5927487850A784F942F19A1868B` for this version
-- Content SHA256: `C*91537A3B5D50E257E8F8C08F6EAB3062C5F706D0A3DA318B1DE7C7253FE73A96` for this version
+- File SHA256: `F*E4833400FA43A5ECE80BB6349D4DFDCB7EC3BA695120FC90AF3A0A4F076C9EA7` for this version
+- Content SHA256: `C*289CA83CA2FF5D6E02564BE91B35B7332C5D8AB70AA14533F1A5B5D5F3374CF5` for this version
   
 ---
  
-# The `misc` package, version: `0.0.3`;
+# The `misc` package, version: `0.0.4`;
   
 ---
  
 ### misc ###
-
 This is a package to place miscellaneous macros, functions, etc. which do not need its own package.
-
 Package in general needs several components(macros, functions, etc.) grouped into that specific purpose. However, we sometimes have macros, functions, etc. which does not have such colleagues with the same purpose. Misc is the place of gathering these macros, functions, etc. without necessity of creating new package for it.
   
 ---
@@ -49,100 +47,190 @@ Required SAS Components:
 # The `misc` package content
 The `misc` package consists of the following content:
  
-1. [`%minimize_charlen()` macro ](#minimizecharlen-macros-1 )
-2. [`%rounddec()` macro ](#rounddec-macros-2 )
-3. [`%roundsig()` macro ](#roundsig-macros-3 )
-4. [`%xpt2sas()` macro ](#xpt2sas-macros-4 )
+1. [`%color_swatch()` macro ](#colorswatch-macros-1 )
+2. [`%minimize_charlen()` macro ](#minimizecharlen-macros-2 )
+3. [`%rounddec()` macro ](#rounddec-macros-3 )
+4. [`%roundsig()` macro ](#roundsig-macros-4 )
+5. [`%xpt2sas()` macro ](#xpt2sas-macros-5 )
   
  
-5. [License note](#license)
+6. [License note](#license)
   
 ---
  
-## `%minimize_charlen()` macro <a name="minimizecharlen-macros-1"></a> ######
+## `%color_swatch()` macro <a name="colorswatch-macros-1"></a> ######
+
+Program:     color_swatch.sas
+ Macro:       %color_swatch
+
+ Description:
+     This macro retrieves SAS color definitions from the system registry 
+     (COLORNAMES section) and generates a visual color swatch table using 
+     PROC REPORT. Each row displays the color name, its hexadecimal code, 
+     and a cell shaded with the corresponding color.
+
+ Purpose:
+     - Extract color name and hex values from SAS registry
+     - Display each color with its background for visual reference
+     - Useful for selecting and verifying colors for reports and graphics
+
+ Input:
+     - None ()
+
+ Output:
+     - A report with three columns:
+         1. Color name
+         2. HEX code
+         3. A dummy column colored with the respective color
+
+ Usage:
+     %color_swatch();
+
+ Author:      [Yutaka Morioka]
+ License: MIT
+
+  
+---
+ 
+## `%minimize_charlen()` macro <a name="minimizecharlen-macros-2"></a> ######
+
 /*
-`%minimize_charlen` is a macro to minimize the length of character variables 
+
+`%minimize_charlen` is a macro to minimize the length of character variables
+
 based on actual data values.
 
 ### Parameters
-  - `ds` : dataset name (without libref; defaults to `WORK` if no libref specified)
-  - `inlib =` : input library name (default: `WORK`)
-  - `outlib = ` : output library name (default: `WORK`)
+
+- `ds` : dataset name (without libref; defaults to `WORK` if no libref specified)
+
+- `inlib =` : input library name (default: `WORK`)
+
+- `outlib = ` : output library name (default: `WORK`)
 
 ### Sample code
 
 ~~~sas
+
 %minimize_charlen(dm)
+
 ~~~
+
 ~~~sas
+
 %minimize_charlen(class, inlib=sashelp, outlib=work)
+
 ~~~
 
 ### Notes
+
 - The macro analyzes all character variables in the specified dataset,
-  determines the maximum length actually used, and alters the table to adjust
-  each variable's length accordingly.
+
+determines the maximum length actually used, and alters the table to adjust
+
+each variable's length accordingly.
+
 - If `inlib` and `outlib` are different, the input dataset is copied before adjustment.
+
 - If the dataset has 0 observations, the macro will print a warning and do nothing.
 
   
 ---
  
-## `%rounddec()` macro <a name="rounddec-macros-2"></a> ######
+## `%rounddec()` macro <a name="rounddec-macros-3"></a> ######
 
 * MACRO NAME: rounrdDec
+
 *
+
 * PURPOSE:
-*   
-*   Rounds a numeric variable to the specified number of decimal places and 
+
+*
+
+*   Rounds a numeric variable to the specified number of decimal places and
+
 *   converts it to a character variable.
+
 *
+
 * PARAMETERS:
+
 *   trgVal     : (Required) The target variable.
-*   dec        : (Required) Number of decimal places. 
+
+*   dec        : (Required) Number of decimal places.
+
 *
+
 * USAGE:
+
 *   %rounrdDec(trgVal=RES,dec=1);
+
 *
+
 * NOTES:
-*   - Only integer values can be assigned to the "dec" parameter. 
+
+*   - Only integer values can be assigned to the "dec" parameter.
+
 *   - For example, if set to "3", "1.234" convert to "1.23".
 
   
 ---
  
-## `%roundsig()` macro <a name="roundsig-macros-3"></a> ######
+## `%roundsig()` macro <a name="roundsig-macros-4"></a> ######
 
 * MACRO NAME: roundSig
+
 *
+
 * PURPOSE:
-*   This macro performs rounding based on the specified number of 
+
+*   This macro performs rounding based on the specified number of
+
 *   significant digits.
+
 *
+
 * PARAMETERS:
+
 *   trgVal     : (Required) The target Value.
-*   SIG        : (Required) Number of significant digits. 
+
+*   SIG        : (Required) Number of significant digits.
+
 *
+
 * USAGE:
+
 *   %roundSig(trgVal=RES,Sig=3);
+
 *
+
 * NOTES:
-*   - Only integer values can be assigned to the "Sig" parameter. 
-*   - For example, if set to "3", 
-*     "1.234" becomes "1.23", 
-*     "12.34" becomes "12.3", 
-*     "12.34" becomes "12.3", 
-*     "123.4" becomes "123", 
+
+*   - Only integer values can be assigned to the "Sig" parameter.
+
+*   - For example, if set to "3",
+
+*     "1.234" becomes "1.23",
+
+*     "12.34" becomes "12.3",
+
+*     "12.34" becomes "12.3",
+
+*     "123.4" becomes "123",
+
 *     "1234"  becomes "1230".
-* 
+
+*
+
   
 ---
  
-## `%xpt2sas()` macro <a name="xpt2sas-macros-4"></a> ######
+## `%xpt2sas()` macro <a name="xpt2sas-macros-5"></a> ######
 
 `%xpt2sas` is a macro to convert xpt files into sas7bdat files.
 
 ### Parameters
+
 	- `indir` : full path for directory with xpt files
 
 	- `outdir` : full path for directory where sas7bdat files will be output
@@ -150,13 +238,19 @@ based on actual data values.
 ### Sample code
 
 ~~~sas
+
 %xpt2sas(
+
 	indir=C:\place\for\xpts,
+
 	outdir=C:\place\for\sas7bdat
+
 )
+
 ~~~
 
 ### Notes
+
 - All of xpt files are converted to sas7bdat files
 
   
@@ -167,25 +261,22 @@ based on actual data values.
  
 # License <a name="license"></a> ######
  
-	Copyright (c) 2025 PharmaForest
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy  
-  of this software and associated documentation files (the "Software"), to deal 
-  in the Software without restriction, including without limitation the rights  
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     
-  copies of the Software, and to permit persons to whom the Software is         
-  furnished to do so, subject to the following conditions:                      
-                                                                                
-  The above copyright notice and this permission notice shall be included       
-  in all copies or substantial portions of the Software.                        
-                                                                                
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR    
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,      
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER        
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
-  SOFTWARE.
+Copyright (c) 2025 PharmaForest
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
   
 ---
  
