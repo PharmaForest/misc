@@ -21,7 +21,7 @@ Author: Ryo Nakaya
 Date: 2025-06-28  
 Version: 0.1  
 
-## %minimize_charlen.sas
+## %minimize_charlen
 Purpose:     The macro analyzes all character variables in the dataset,  determines the maximum length actually used, and alters the table to adjust each variable's length accordingly.
 
 Sample code:  
@@ -37,7 +37,7 @@ Author: Yutaka Morioka
 Date: 2025-07-02  
 Version: 0.1  
 
-## %roundsig.sas, %rounddec.sas
+## %roundsig, %rounddec
 Purpose:     roundsig:This macro performs rounding based on the specified number of significant digits.. rounddec:Rounds a numeric variable to the specified number of decimal places and converts it to a character variable.
 
 
@@ -60,11 +60,31 @@ Author: Hiroki Yamanobe
 Date: 2025-07-03  
 Version: 0.3  
 
+## %color_swatch
+ Description:
+     This macro retrieves SAS color definitions from the system registry 
+     (COLORNAMES section) and generates a visual color swatch table using 
+     PROC REPORT. Each row displays the color name, its hexadecimal code, 
+     and a cell shaded with the corresponding color.
 
+ Purpose:
+     - Extract color name and hex values from SAS registry
+     - Display each color with its background for visual reference
+     - Useful for selecting and verifying colors for reports and graphics  
+     
+Sample code:  
+~~~sas
+%color_swatch()
+~~~
+
+Author: Yutaka Morioka  
+Date: 2025-07-23  
+Version: 0.1  
 
 ## Version history
-0.0.3(03July2025)	: Add %rounddec.sas, roundsig.sas  
-0.0.2(02July2025)	: Add %minimize_charlen.sas  
+0.0.4(23July2025)	: Add %rounddec, roundsig 
+0.0.3(03July2025)	: Add %rounddec, roundsig  
+0.0.2(02July2025)	: Add %minimize_charlen 
 0.0.1(28June2025)	: Initial version 　<br>
 
 
