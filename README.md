@@ -71,6 +71,8 @@ Version: 0.3
      - Extract color name and hex values from SAS registry
      - Display each color with its background for visual reference
      - Useful for selecting and verifying colors for reports and graphics  
+
+Note: The color sample will not be displayed unless ODS HTML is turned on.　　
      
 Sample code:  
 ~~~sas
