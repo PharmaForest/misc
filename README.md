@@ -84,9 +84,9 @@ Date: 2025-07-23
 Version: 0.1  
 
 ## Version history
-0.0.4(23July2025)	: Add %rounddec, roundsig 
+0.0.4(23July2025)	: Add %color_swatch   
 0.0.3(03July2025)	: Add %rounddec, roundsig  
-0.0.2(02July2025)	: Add %minimize_charlen 
+0.0.2(02July2025)	: Add %minimize_charlen  
 0.0.1(28June2025)	: Initial version 　<br>
 
 
