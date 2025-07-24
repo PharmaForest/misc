@@ -1,4 +1,4 @@
-# misc
+# misc (latest version 0.0.4 on 23July2025)
 A SAS package to place miscellaneous macros, functions, etc.  
 <img src="./misc_logo_small.png" width="250"/>
 
