@@ -114,7 +114,7 @@ Author: Yutaka Morioka
 Date: 2025-08-26  
 Version: 0.1  
 
-## swapn_vec(x[*], y[*]) routine
+## swapn_vec(x, y) routine
 Swap numeric arrays (must have the same dimension)
 ~~~sas
 data _null_;
@@ -131,7 +131,7 @@ Author: Yutaka Morioka
 Date: 2025-08-26  
 Version: 0.1  
 
-## swapc_vec(x[*] $, y[*] $) routine
+## swapc_vec(x, y) routine
 Swap character arrays (must have the same dimension)
 ~~~sas
 data _null_;
