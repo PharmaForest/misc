@@ -95,7 +95,7 @@ subroutine swapn(x, y);
     y = t;
   endsub;
 ~~~
-<img width="80" height="24" alt="Image" src="https://github.com/user-attachments/assets/ff92d936-5a78-4f42-87cb-70e966cfe891" />  
+<img width="160" height="48" alt="Image" src="https://github.com/user-attachments/assets/ff92d936-5a78-4f42-87cb-70e966cfe891" />  
 
 Author: Yutaka Morioka  
 Date: 2025-08-26  
