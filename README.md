@@ -114,7 +114,41 @@ Author: Yutaka Morioka
 Date: 2025-08-26  
 Version: 0.1  
 
-## swapc(x, y) routine
+## swapn_vec(x[*], y[*]) routine
+Swap numeric arrays (must have the same dimension)
+~~~sas
+data _null_;
+  array x[3] x1-x3 (1 2 3);
+  array y[3] y1-y3 (10 20 30);
+  put 'Before X: ' x1= x2= x3= / 'Before Y: ' y1= y2= y3=;
+  call swapn_vec(x, y);
+  put 'After  X: ' x1= x2= x3= / 'After  Y: ' y1= y2= y3=;
+run;
+~~~
+<img width="262" height="80" alt="Image" src="https://github.com/user-attachments/assets/5470d644-fecc-48d3-9180-6852e1a48cf7" />
+
+Author: Yutaka Morioka  
+Date: 2025-08-26  
+Version: 0.1  
+
+## swapc_vec(x[*] $, y[*] $) routine
+Swap character arrays (must have the same dimension)
+~~~sas
+data _null_;
+  length a1-a3 b1-b3 $10;
+  array a[3] a1-a3 ('AAA' 'BBB' 'CCC');
+  array b[3] b1-b3 ('XXX' 'YYY' 'ZZZ');
+  put 'Before A: ' a1= a2= a3= / 'Before B: ' b1= b2= b3=;
+  call swapc_vec(a, b);
+  put 'After  A: ' a1= a2= a3= / 'After  B: ' b1= b2= b3=;
+run;
+~~~
+<img width="286" height="80" alt="Image" src="https://github.com/user-attachments/assets/6d3f230e-b693-4478-94ac-5b1d124d74d8" />
+
+Author: Yutaka Morioka  
+Date: 2025-08-26  
+Version: 0.1  
+
 
 ## Version history
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
