@@ -85,7 +85,19 @@ Author: Yutaka Morioka
 Date: 2025-07-23  
 Version: 0.1  
 
-## swapn routine
+## swapn(x, y) routine
+Swap numeric scalars
+~~~sas
+subroutine swapn(x, y);
+    outargs x, y;
+    t = x; 
+    x = y; 
+    y = t;
+  endsub;
+~~~
+Author: Yutaka Morioka  
+Date: 2025-08-26  
+Version: 0.1  
 
 ## Version history
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
