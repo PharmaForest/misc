@@ -1,4 +1,4 @@
-# misc (latest version 0.0.4 on 23July2025)
+# misc (latest version 0.0.5 on 26August2025)
 A SAS package to place miscellaneous macros, functions, etc.  
 <img src="./misc_logo_small.png" width="250"/>
 
@@ -86,6 +86,7 @@ Date: 2025-07-23
 Version: 0.1  
 
 ## Version history
+0.0.5(26August2025) : Add swapn function, swapc function, swapn_vec routine, swapc_vec routine   
 0.0.4(23July2025)	: Add %color_swatch   
 0.0.3(03July2025)	: Add %rounddec, roundsig  
 0.0.2(02July2025)	: Add %minimize_charlen  
