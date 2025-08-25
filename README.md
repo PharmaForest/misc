@@ -88,18 +88,33 @@ Version: 0.1
 ## swapn(x, y) routine
 Swap numeric scalars
 ~~~sas
-subroutine swapn(x, y);
-    outargs x, y;
-    t = x; 
-    x = y; 
-    y = t;
-  endsub;
+data _null_;
+  a = 1; b = 2;
+  put 'Before: ' a= b=;
+  call swapn(a, b);
+  put 'After : ' a= b=;
+run;
 ~~~
 <img width="160" height="48" alt="Image" src="https://github.com/user-attachments/assets/ff92d936-5a78-4f42-87cb-70e966cfe891" />  
+
+## swapc(x, y) routine
+Swap character scalars
+~~~sas
+data _null_;
+  length s t $10;
+  s = 'foo'; t = 'bar';
+  put 'Before: ' s= t=;
+  call swapc(s, t);
+  put 'After : ' s= t=;
+run;
+~~~
+<img width="188" height="42" alt="Image" src="https://github.com/user-attachments/assets/76977286-af43-4cdc-a45e-9f77f871a2bd" />
 
 Author: Yutaka Morioka  
 Date: 2025-08-26  
 Version: 0.1  
+
+## swapc(x, y) routine
 
 ## Version history
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
