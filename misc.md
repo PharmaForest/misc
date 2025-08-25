@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: misc
-- Version: 0.0.4
-- Generated: 2025-07-23T22:14:21
+- Version: 0.0.5
+- Generated: 2025-08-26T00:29:27
 - Author(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - Maintainer(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - License: MIT
-- File SHA256: `F*E4833400FA43A5ECE80BB6349D4DFDCB7EC3BA695120FC90AF3A0A4F076C9EA7` for this version
-- Content SHA256: `C*289CA83CA2FF5D6E02564BE91B35B7332C5D8AB70AA14533F1A5B5D5F3374CF5` for this version
+- File SHA256: `F*60F8480A5E3CFD6F8017E5993215D4FA98C57EEBB2BB3E87940A3D66BC3951E5` for this version
+- Content SHA256: `C*BDA96263E4F6907EC45B5D5274CFD3183BAF14D10102FD14AF9FDD9D4599F44B` for this version
   
 ---
  
-# The `misc` package, version: `0.0.4`;
+# The `misc` package, version: `0.0.5`;
   
 ---
  
@@ -47,210 +47,168 @@ Required SAS Components:
 # The `misc` package content
 The `misc` package consists of the following content:
  
-1. [`%color_swatch()` macro ](#colorswatch-macros-1 )
-2. [`%minimize_charlen()` macro ](#minimizecharlen-macros-2 )
-3. [`%rounddec()` macro ](#rounddec-macros-3 )
-4. [`%roundsig()` macro ](#roundsig-macros-4 )
-5. [`%xpt2sas()` macro ](#xpt2sas-macros-5 )
+1. [`swapc()` function ](#swapc-functions-1 )
+2. [`swapc_vec()` function ](#swapcvec-functions-2 )
+3. [`swapn()` function ](#swapn-functions-3 )
+4. [`swapn_vec()` function ](#swapnvec-functions-4 )
+5. [`%color_swatch()` macro ](#colorswatch-macros-5 )
+6. [`%minimize_charlen()` macro ](#minimizecharlen-macros-6 )
+7. [`%rounddec()` macro ](#rounddec-macros-7 )
+8. [`%roundsig()` macro ](#roundsig-macros-8 )
+9. [`%xpt2sas()` macro ](#xpt2sas-macros-9 )
   
  
-6. [License note](#license)
+10. [License note](#license)
   
 ---
  
-## `%color_swatch()` macro <a name="colorswatch-macros-1"></a> ######
+## `swapc()` function <a name="swapc-functions-1"></a> ######
+
+Swap character scalars
+
+  
+---
+ 
+## `swapc_vec()` function <a name="swapcvec-functions-2"></a> ######
+
+Swap character arrays (must have the same dimension)
+
+  
+---
+ 
+## `swapn()` function <a name="swapn-functions-3"></a> ######
+
+Swap numeric scalars
+
+  
+---
+ 
+## `swapn_vec()` function <a name="swapnvec-functions-4"></a> ######
+
+Swap numeric arrays (must have the same dimension)
+
+  
+---
+ 
+## `%color_swatch()` macro <a name="colorswatch-macros-5"></a> ######
 
 Program:     color_swatch.sas
- Macro:       %color_swatch
-
- Description:
-     This macro retrieves SAS color definitions from the system registry 
-     (COLORNAMES section) and generates a visual color swatch table using 
-     PROC REPORT. Each row displays the color name, its hexadecimal code, 
-     and a cell shaded with the corresponding color.
-
- Purpose:
-     - Extract color name and hex values from SAS registry
-     - Display each color with its background for visual reference
-     - Useful for selecting and verifying colors for reports and graphics
-
- Input:
-     - None ()
-
- Output:
-     - A report with three columns:
-         1. Color name
-         2. HEX code
-         3. A dummy column colored with the respective color
-
- Usage:
-     %color_swatch();
-
- Author:      [Yutaka Morioka]
- License: MIT
+Macro:       %color_swatch
+Description:
+This macro retrieves SAS color definitions from the system registry
+(COLORNAMES section) and generates a visual color swatch table using
+PROC REPORT. Each row displays the color name, its hexadecimal code,
+and a cell shaded with the corresponding color.
+Purpose:
+- Extract color name and hex values from SAS registry
+- Display each color with its background for visual reference
+- Useful for selecting and verifying colors for reports and graphics
+Input:
+- None ()
+Output:
+- A report with three columns:
+1. Color name
+2. HEX code
+3. A dummy column colored with the respective color
+Usage:
+%color_swatch();
+Author:      [Yutaka Morioka]
+License: MIT
 
   
 ---
  
-## `%minimize_charlen()` macro <a name="minimizecharlen-macros-2"></a> ######
+## `%minimize_charlen()` macro <a name="minimizecharlen-macros-6"></a> ######
 
 /*
-
 `%minimize_charlen` is a macro to minimize the length of character variables
-
 based on actual data values.
-
 ### Parameters
-
 - `ds` : dataset name (without libref; defaults to `WORK` if no libref specified)
-
 - `inlib =` : input library name (default: `WORK`)
-
 - `outlib = ` : output library name (default: `WORK`)
-
 ### Sample code
-
 ~~~sas
-
 %minimize_charlen(dm)
-
 ~~~
-
 ~~~sas
-
 %minimize_charlen(class, inlib=sashelp, outlib=work)
-
 ~~~
-
 ### Notes
-
 - The macro analyzes all character variables in the specified dataset,
-
 determines the maximum length actually used, and alters the table to adjust
-
 each variable's length accordingly.
-
 - If `inlib` and `outlib` are different, the input dataset is copied before adjustment.
-
 - If the dataset has 0 observations, the macro will print a warning and do nothing.
 
   
 ---
  
-## `%rounddec()` macro <a name="rounddec-macros-3"></a> ######
+## `%rounddec()` macro <a name="rounddec-macros-7"></a> ######
 
 * MACRO NAME: rounrdDec
-
 *
-
 * PURPOSE:
-
 *
-
 *   Rounds a numeric variable to the specified number of decimal places and
-
 *   converts it to a character variable.
-
 *
-
 * PARAMETERS:
-
 *   trgVal     : (Required) The target variable.
-
 *   dec        : (Required) Number of decimal places.
-
 *
-
 * USAGE:
-
 *   %rounrdDec(trgVal=RES,dec=1);
-
 *
-
 * NOTES:
-
 *   - Only integer values can be assigned to the "dec" parameter.
-
 *   - For example, if set to "3", "1.234" convert to "1.23".
 
   
 ---
  
-## `%roundsig()` macro <a name="roundsig-macros-4"></a> ######
+## `%roundsig()` macro <a name="roundsig-macros-8"></a> ######
 
 * MACRO NAME: roundSig
-
 *
-
 * PURPOSE:
-
 *   This macro performs rounding based on the specified number of
-
 *   significant digits.
-
 *
-
 * PARAMETERS:
-
 *   trgVal     : (Required) The target Value.
-
 *   SIG        : (Required) Number of significant digits.
-
 *
-
 * USAGE:
-
 *   %roundSig(trgVal=RES,Sig=3);
-
 *
-
 * NOTES:
-
 *   - Only integer values can be assigned to the "Sig" parameter.
-
 *   - For example, if set to "3",
-
 *     "1.234" becomes "1.23",
-
 *     "12.34" becomes "12.3",
-
 *     "12.34" becomes "12.3",
-
 *     "123.4" becomes "123",
-
 *     "1234"  becomes "1230".
-
 *
 
   
 ---
  
-## `%xpt2sas()` macro <a name="xpt2sas-macros-5"></a> ######
+## `%xpt2sas()` macro <a name="xpt2sas-macros-9"></a> ######
 
 `%xpt2sas` is a macro to convert xpt files into sas7bdat files.
-
 ### Parameters
-
 	- `indir` : full path for directory with xpt files
-
 	- `outdir` : full path for directory where sas7bdat files will be output
-
 ### Sample code
-
 ~~~sas
-
 %xpt2sas(
-
 	indir=C:\place\for\xpts,
-
 	outdir=C:\place\for\sas7bdat
-
 )
-
 ~~~
-
 ### Notes
-
 - All of xpt files are converted to sas7bdat files
 
   
