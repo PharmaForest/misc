@@ -161,22 +161,27 @@ Version: 0.1
 
 <img width="484" height="396" alt="Image" src="https://github.com/user-attachments/assets/7607ee5a-067b-43ce-949c-7dc126b496e7" />
 
-  Author: Yutaka Morioka  
-  Created: 2025-10-27  
-  Version: 0.1    
+Author: Yutaka Morioka  
+Date: 2025-10-27  
+Version: 0.1  
+  
 ---
 
  
 ## `%line_swatch()` macro 
-  Purpose:
-    Generate a visual swatch of line patterns available in SAS (pattern numbers 1?46).
+Purpose:  
+    Generate a visual swatch of line patterns available in SAS (pattern numbers 1 - 46).  
 
-  Usage Example:
+  Usage Example:  
+  ~~~sas
     %line_swatch();
+  ~~~
+<img width="391" height="290" alt="Image" src="https://github.com/user-attachments/assets/fbb0e2d9-4c2b-45cf-8fae-069a2f28093a" />  
+<img width="389" height="292" alt="Image" src="https://github.com/user-attachments/assets/d17a834a-43f2-4938-9eb0-6f43602c4efb" />  
 
-  Author:          Yutaka Morioka
-  Created:         2025-10-27
-
+Author: Yutaka Morioka  
+Date: 2025-10-27  
+Version: 0.1  
   
 ---
 
