@@ -177,6 +177,7 @@ Purpose:
     %line_swatch();
   ~~~
 <img width="391" height="290" alt="Image" src="https://github.com/user-attachments/assets/fbb0e2d9-4c2b-45cf-8fae-069a2f28093a" />  
+  
 <img width="389" height="292" alt="Image" src="https://github.com/user-attachments/assets/d17a834a-43f2-4938-9eb0-6f43602c4efb" />  
 
 Author: Yutaka Morioka  
