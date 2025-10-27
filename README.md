@@ -149,8 +149,49 @@ Author: Yutaka Morioka
 Date: 2025-08-26  
 Version: 0.1  
 
+## `%view_swatch()` macro 
+  Purpose:
+    Display a comprehensive list of SAS DICTIONARY tables and corresponding SASHELP views, along with short descriptions for each.  
+    This macro serves as a quick reference or lookup guide to understand the relationship  between SQL-accessible DICTIONARY tables and their SASHELP counterparts.
+
+  Usage Example:
+    %view_swatch();
+
+  Author:          Yutaka Morioka
+  Created:         2025-10-27
+  
+---
+
+ 
+## `%line_swatch()` macro 
+  Purpose:
+    Generate a visual swatch of line patterns available in SAS (pattern numbers 1?46).
+
+  Usage Example:
+    %line_swatch();
+
+  Author:          Yutaka Morioka
+  Created:         2025-10-27
+
+  
+---
+
+## `%symbol_swatch()` macro <a name="symbolswatch-macros-10"></a> ######
+  Purpose:
+    Generate a visual swatch of marker symbol patterns available in SAS
+
+  Usage Example:
+    %symbol_swatch();
+
+  Author:          Yutaka Morioka
+  Created:         2025-10-27
+  
+---
+
+
 
 ## Version history
+0.0.6(27October2025) : Add view_swatch, line_swatch, symbol_swatch 
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
 0.0.4(23July2025)	: Add %color_swatch   
 0.0.3(03July2025)	: Add %rounddec, roundsig  
