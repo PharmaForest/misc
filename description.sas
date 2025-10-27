@@ -1,7 +1,7 @@
 Type : Package
 Package : misc
 Title : misc package to place miscellaneous macros
-Version : 0.0.5
+Version : 0.0.6
 Author : [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 Maintainer : [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 License : MIT

@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: misc
-- Version: 0.0.5
-- Generated: 2025-10-27T15:01:13
+- Version: 0.0.6
+- Generated: 2025-10-27T15:20:05
 - Author(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - Maintainer(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - License: MIT
-- File SHA256: `F*FDBE93DD63818097D514C467AA63F8D4549323FF82706FD5790726B0F06F6D66` for this version
-- Content SHA256: `C*F1EA28F49080DD705A90BAFA36F59948361D559E4F152F3338BA5A62590CF7A9` for this version
+- File SHA256: `F*371EE60A30C359BA8D40F7939E1DD6AEAFA87111FD40D55A0E6B46E5868E7371` for this version
+- Content SHA256: `C*4A06D76BDAEA7BF55517DF6FB3A70DE8E6FAAFF984DB8B7A8CC00334ADF74A66` for this version
   
 ---
  
-# The `misc` package, version: `0.0.5`;
+# The `misc` package, version: `0.0.6`;
   
 ---
  
