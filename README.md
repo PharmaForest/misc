@@ -158,6 +158,7 @@ Version: 0.1
   ~~~sas
     %view_swatch();
   ~~~
+
 <img width="482" height="414" alt="Image" src="https://github.com/user-attachments/assets/d04fe59c-742c-4dd5-8819-b889f78f2240" />
 
   Author:          Yutaka Morioka
