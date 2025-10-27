@@ -62,7 +62,7 @@ proc odstable data=View_swatch;
 column Dictionary SASHELP DESC;
 define header hDictionary; start=Dictionary;end=Dictionary;just=left;text"DICTIONARY Table(SQL)";end;
 define header hSASHELP; start=SASHELP;end=SASHELP;just=left;text"SASHELP.XX View";end;
-define header hDESC; start=DESC;end=DESC;just=left; jtext"Description";end;
+define header hDESC; start=DESC;end=DESC;just=left; text"Description";end;
 define Dictionary; print_headers=off; just=left;  text_split="#"; end;
 define SASHELP; print_headers=off; just=left;  text_split="#"; end;
 define DESC; print_headers=off; just=left;  text_split="#"; end;
