@@ -195,7 +195,7 @@ Version: 0.1
     %symbol_swatch();
  ~~~
 
-![Uploading image.png…]()
+<img width="391" height="295" alt="Image" src="https://github.com/user-attachments/assets/cab35215-5c3e-4a26-9c66-83929ec69d96" />
 
 Author: Yutaka Morioka  
 Date: 2025-10-27  
