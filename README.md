@@ -150,12 +150,15 @@ Date: 2025-08-26
 Version: 0.1  
 
 ## `%view_swatch()` macro 
-  Purpose:
-    Display a comprehensive list of SAS DICTIONARY tables and corresponding SASHELP views, along with short descriptions for each.  
-    This macro serves as a quick reference or lookup guide to understand the relationship  between SQL-accessible DICTIONARY tables and their SASHELP counterparts.
+  Purpose:  
+    Display a comprehensive list of SAS DICTIONARY tables and corresponding SASHELP views, along with short descriptions for each.    
+    This macro serves as a quick reference or lookup guide to understand the relationship  between SQL-accessible DICTIONARY tables and their SASHELP counterparts.  
 
-  Usage Example:
+  Usage Example:  
+  ~~sas
     %view_swatch();
+  ~~~
+<img width="482" height="414" alt="Image" src="https://github.com/user-attachments/assets/d04fe59c-742c-4dd5-8819-b889f78f2240" />
 
   Author:          Yutaka Morioka
   Created:         2025-10-27
