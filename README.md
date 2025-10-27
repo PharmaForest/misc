@@ -5,7 +5,7 @@ A SAS package to place miscellaneous macros, functions, etc.
 
 The repo will be collaborative work.  
 
-## %xpt2sas  
+## %xpt2sas() macro  
 Purpose:     This macro converts xpt files in the folder into sas7bdat files.  
 
 Sample code:  
@@ -21,7 +21,7 @@ Author: Ryo Nakaya
 Date: 2025-06-28  
 Version: 0.1  
 
-## %minimize_charlen
+## %minimize_charlen() macro
 Purpose:     The macro analyzes all character variables in the dataset,  determines the maximum length actually used, and alters the table to adjust each variable's length accordingly.
 
 Sample code:  
@@ -37,7 +37,7 @@ Author: Yutaka Morioka
 Date: 2025-07-02  
 Version: 0.1  
 
-## %roundsig, %rounddec
+## %roundsig(), %rounddec() macro
 Purpose:     roundsig:This macro performs rounding based on the specified number of significant digits.. rounddec:Rounds a numeric variable to the specified number of decimal places and converts it to a character variable.
 
 
@@ -60,7 +60,7 @@ Author: Hiroki Yamanobe
 Date: 2025-07-03  
 Version: 0.3  
 
-## %color_swatch
+## %color_swatch() macro
  Description:
      This macro retrieves SAS color definitions from the system registry 
      (COLORNAMES section) and generates a visual color swatch table using 
