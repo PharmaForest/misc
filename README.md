@@ -187,16 +187,20 @@ Version: 0.1
 ---
 
 ## `%symbol_swatch()` macro <a name="symbolswatch-macros-10"></a> ######
-  Purpose:
-    Generate a visual swatch of marker symbol patterns available in SAS
+  Purpose:  
+    Generate a visual swatch of marker symbol patterns available in SAS  
 
-  Usage Example:
+  Usage Example:  
+  ~~~sas
     %symbol_swatch();
+ ~~~
 
-  Author:          Yutaka Morioka
-  Created:         2025-10-27
+![Uploading image.png…]()
+
+Author: Yutaka Morioka  
+Date: 2025-10-27  
+Version: 0.1  
   
----
 
 
 
