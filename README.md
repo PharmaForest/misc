@@ -205,7 +205,7 @@ Version: 0.1
 
 
 ## Version history
-0.0.6(27October2025) : Add view_swatch, line_swatch, symbol_swatch 
+0.0.6(27October2025) : Add view_swatch, line_swatch, symbol_swatch   
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
 0.0.4(23July2025)	: Add %color_swatch   
 0.0.3(03July2025)	: Add %rounddec, roundsig  
