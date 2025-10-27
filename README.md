@@ -161,9 +161,9 @@ Version: 0.1
 
 <img width="484" height="396" alt="Image" src="https://github.com/user-attachments/assets/7607ee5a-067b-43ce-949c-7dc126b496e7" />
 
-  Author:          Yutaka Morioka
-  Created:         2025-10-27
-  
+  Author: Yutaka Morioka  
+  Created: 2025-10-27  
+  Version: 0.1    
 ---
 
  
