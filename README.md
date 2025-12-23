@@ -267,7 +267,7 @@ Version: 1.0
 
 
 ## Version history
-0.0.7(23December2025) : Add view_swatch, line_swatch, symbol_swatch   
+0.0.7(23December2025) : Add derive_epoch 
 0.0.6(27October2025) : Add view_swatch, line_swatch, symbol_swatch   
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
 0.0.4(23July2025)	: Add %color_swatch   
