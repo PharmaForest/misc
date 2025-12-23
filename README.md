@@ -207,18 +207,16 @@ This macro is based on the SAS macros referenced from Saikrishnareddy Yengannaga
 The original repository provides SDTM EPOCH derivation implementations in three languages: SAS, R, and Python.
 For full details and the complete implementations, please refer to the original repository.  
 
-  Purpose:    This macro derives the EPOCH variable for SDTM datasets by analyzing  
-              subject event records from the SE (Subject Elements) domain. It handles  
-              ISO 8601 date/datetime formats with varying precision and supports  
-              edge case handling for dates falling outside the SE date ranges.  
+  Purpose:    This macro derives the EPOCH variable for SDTM datasets by analyzing subject event records from the SE (Subject Elements) domain.  
+  			  It handles ISO 8601 date/datetime formats with varying precision and supports edge case handling for dates falling outside the SE date ranges.  
 
   Parameters:    
-  ~~~text
- @param[in]   sdtm_in     Input SDTM dataset (required)
- @param[out]  sdtm_out    Output dataset name (required)
- @param[in]   ref_var     Reference date/datetime variable in sdtm_in (required).
+ ~~~text
+ -- param[in]   sdtm_in     Input SDTM dataset (required)
+ -- param[out]  sdtm_out    Output dataset name (required)
+ -- param[in]   ref_var     Reference date/datetime variable in sdtm_in (required).
                           Should be ISO 8601 format (e.g., RFSTDTC, AESTDTC)
- @param[in]   handle_edge Handle dates outside SE range (default: N)
+ -- param[in]   handle_edge Handle dates outside SE range (default: N)
                           - Y: assign first/last epoch for out-of-range dates
                               (Use with caution - SDTM IG recommends null for pre-study records)
                           - N: leave EPOCH missing for out-of-range dates (SDTM IG compliant)
