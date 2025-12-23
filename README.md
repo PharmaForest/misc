@@ -201,7 +201,7 @@ Author: Yutaka Morioka
 Date: 2025-10-27  
 Version: 0.1  
 
-## `%symbol_swatch()` macro <a name="symbolswatch-macros-10"></a> ######
+## `%derive_epoch()` macro <a name="derive_epoch-11"></a> ######
 This macro is based on the SAS macros referenced from Saikrishnareddy Yengannagari’s sdtm-epoch repository
 (https://github.com/kusy2009/sdtm-epoch).  
 The original repository provides SDTM EPOCH derivation implementations in three languages: SAS, R, and Python.
@@ -261,7 +261,8 @@ For full details and the complete implementations, please refer to the original 
 
 Author: Saikrishnareddy Yengannagari  
 Date: 2025-12-23  
-Version: 1.0  
+Version: 1.0 
+ 
 ---
 
 
