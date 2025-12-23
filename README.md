@@ -1,4 +1,4 @@
-# misc (latest version 0.0.6 on 27October2025)
+# misc (latest version 0.0.7 on 23December2025)
 A SAS package to place miscellaneous macros, functions, etc.  
 <img src="./misc_logo_small.png" width="250"/>
 
@@ -200,7 +200,69 @@ Version: 0.1
 Author: Yutaka Morioka  
 Date: 2025-10-27  
 Version: 0.1  
-  
+
+## `%symbol_swatch()` macro <a name="symbolswatch-macros-10"></a> ######
+This macro is based on the SAS macros referenced from Saikrishnareddy Yengannagari’s sdtm-epoch repository
+(https://github.com/kusy2009/sdtm-epoch).  
+The original repository provides SDTM EPOCH derivation implementations in three languages: SAS, R, and Python.
+For full details and the complete implementations, please refer to the original repository.  
+
+  Purpose:    This macro derives the EPOCH variable for SDTM datasets by analyzing  
+              subject event records from the SE (Subject Elements) domain. It handles  
+              ISO 8601 date/datetime formats with varying precision and supports  
+              edge case handling for dates falling outside the SE date ranges.  
+
+  Parameters:    
+  ~~~text
+ @param[in]   sdtm_in     Input SDTM dataset (required)
+ @param[out]  sdtm_out    Output dataset name (required)
+ @param[in]   ref_var     Reference date/datetime variable in sdtm_in (required).
+                          Should be ISO 8601 format (e.g., RFSTDTC, AESTDTC)
+ @param[in]   handle_edge Handle dates outside SE range (default: N)
+                          - Y: assign first/last epoch for out-of-range dates
+                              (Use with caution - SDTM IG recommends null for pre-study records)
+                          - N: leave EPOCH missing for out-of-range dates (SDTM IG compliant)
+  ~~~~
+ @note        This macro expects the SE (Subject Elements) dataset to be present
+              in the SDTM library as sdtm.se before calling this macro.  
+ @note        SE domain must contain: USUBJID, SESTDY, SEENDY, SESTDTC, SEENDTC,
+              EPOCH, TAETORD  
+ @note        Missing SEENDTC on non-terminal records is imputed from next SESTDTC  
+ @note        Datetime comparison uses full precision when time component exists  
+ @note        Boundary overlap handling: When a date falls on the boundary between two epochs  
+              (e.g., SEENDTC of one epoch equals SESTDTC of next), the later epoch is assigned based on the tightest SESTDTC match)  
+ @note        Per SDTM IG: For Findings, use --DTC as ref_var; for Interventions/Events, use --STDTC  
+ @note        Per SDTM IG: Pre-study records (before subject participation) should have null EPOCH.  
+              Use handle_edge=N (default) to comply with this guidance.  
+   
+  ~~~sas
+   // Derive EPOCH for AE domain using AESTDTC (Interventions/Events use --STDTC)
+   %derive_epoch(
+       sdtm_in   = sdtm.ae,
+       sdtm_out  = ae_with_epoch,
+       ref_var   = aestdtc
+   );
+
+   // Derive EPOCH for VS domain using VSDTC (Findings use --DTC)
+   %derive_epoch(
+       sdtm_in    = sdtm.vs,
+       sdtm_out   = vs_with_epoch,
+       ref_var    = vsdtc
+   );
+
+   // With edge case handling enabled (use with caution)
+   %derive_epoch(
+       sdtm_in     = sdtm.lb,
+       sdtm_out    = lb_with_epoch,
+       ref_var     = lbdtc,
+       handle_edge = Y
+   );
+ ~~~
+
+
+Author: Saikrishnareddy Yengannagari  
+Date: 2025-12-23  
+Version: 1.0  
 
 
 
