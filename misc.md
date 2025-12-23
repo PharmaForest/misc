@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: misc
-- Version: 0.0.6
-- Generated: 2025-10-27T15:44:59
-- Author(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
+- Version: 0.0.7
+- Generated: 2025-12-23T14:10:46
+- Author(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya],[Saikrishnareddy Yengannagari]
 - Maintainer(s): [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 - License: MIT
-- File SHA256: `F*9C2F43389241A6EC07B498F8C840DAD76F5EF68119EA7FC1C88435CD03B6B95B` for this version
-- Content SHA256: `C*6672564A9D286F55216537DC5B14096D868B6C483E0EA6EA41DE0A736CB48CC2` for this version
+- File SHA256: `F*210A07461C239988564CFA2E9DE4AD9796DB7DE9709D75BF1962BCFEE7CABEB4` for this version
+- Content SHA256: `C*44318768D4EFF5912624AD1F70916D318F88DEDDC989465ECB1F10E4BC46E503` for this version
   
 ---
  
-# The `misc` package, version: `0.0.6`;
+# The `misc` package, version: `0.0.7`;
   
 ---
  
@@ -52,16 +52,17 @@ The `misc` package consists of the following content:
 3. [`swapn()` function ](#swapn-functions-3 )
 4. [`swapn_vec()` function ](#swapnvec-functions-4 )
 5. [`%color_swatch()` macro ](#colorswatch-macros-5 )
-6. [`%line_swatch()` macro ](#lineswatch-macros-6 )
-7. [`%minimize_charlen()` macro ](#minimizecharlen-macros-7 )
-8. [`%rounddec()` macro ](#rounddec-macros-8 )
-9. [`%roundsig()` macro ](#roundsig-macros-9 )
-10. [`%symbol_swatch()` macro ](#symbolswatch-macros-10 )
-11. [`%view_swatch()` macro ](#viewswatch-macros-11 )
-12. [`%xpt2sas()` macro ](#xpt2sas-macros-12 )
+6. [`%derive_epoch()` macro ](#deriveepoch-macros-6 )
+7. [`%line_swatch()` macro ](#lineswatch-macros-7 )
+8. [`%minimize_charlen()` macro ](#minimizecharlen-macros-8 )
+9. [`%rounddec()` macro ](#rounddec-macros-9 )
+10. [`%roundsig()` macro ](#roundsig-macros-10 )
+11. [`%symbol_swatch()` macro ](#symbolswatch-macros-11 )
+12. [`%view_swatch()` macro ](#viewswatch-macros-12 )
+13. [`%xpt2sas()` macro ](#xpt2sas-macros-13 )
   
  
-13. [License note](#license)
+14. [License note](#license)
   
 ---
  
@@ -121,7 +122,73 @@ License: MIT
   
 ---
  
-## `%line_swatch()` macro <a name="lineswatch-macros-6"></a> ######
+## `%derive_epoch()` macro <a name="deriveepoch-macros-6"></a> ######
+
+@file        derive_epoch.sas
+ @brief       Derives the EPOCH variable for SDTM datasets using SE domain
+ 
+ @details     This macro derives the EPOCH variable for SDTM datasets by analyzing
+              subject event records from the SE (Subject Elements) domain. It handles
+              ISO 8601 date/datetime formats with varying precision and supports
+              edge case handling for dates falling outside the SE date ranges.
+ 
+ @param[in]   sdtm_in     Input SDTM dataset (required)
+ @param[out]  sdtm_out    Output dataset name (required)
+ @param[in]   ref_var     Reference date/datetime variable in sdtm_in (required).
+                          Should be ISO 8601 format (e.g., RFSTDTC, AESTDTC)
+ @param[in]   handle_edge Handle dates outside SE range (default: N)
+                          - Y: assign first/last epoch for out-of-range dates
+                              (Use with caution - SDTM IG recommends null for pre-study records)
+                          - N: leave EPOCH missing for out-of-range dates (SDTM IG compliant)
+ 
+ @note        This macro expects the SE (Subject Elements) dataset to be present
+              in the SDTM library as sdtm.se before calling this macro.
+ @note        SE domain must contain: USUBJID, SESTDY, SEENDY, SESTDTC, SEENDTC,
+              EPOCH, TAETORD
+ @note        Missing SEENDTC on non-terminal records is imputed from next SESTDTC
+ @note        Datetime comparison uses full precision when time component exists
+ @note        Boundary overlap handling: When a date falls on the boundary between two epochs
+              (e.g., SEENDTC of one epoch equals SESTDTC of next), the later epoch is assigned
+              based on the tightest SESTDTC match
+ @note        Per SDTM IG: For Findings, use --DTC as ref_var; for Interventions/Events, use --STDTC
+ @note        Per SDTM IG: Pre-study records (before subject participation) should have null EPOCH.
+              Use handle_edge=N (default) to comply with this guidance.
+ 
+ @author      Saikrishnareddy Yengannagari
+ @date        20 December 2025
+ @version     1.0
+ 
+ @example
+ @code
+   // Derive EPOCH for AE domain using AESTDTC (Interventions/Events use --STDTC)
+   %derive_epoch(
+       sdtm_in   = sdtm.ae,
+       sdtm_out  = ae_with_epoch,
+       ref_var   = aestdtc
+   );
+
+   // Derive EPOCH for VS domain using VSDTC (Findings use --DTC)
+   %derive_epoch(
+       sdtm_in    = sdtm.vs,
+       sdtm_out   = vs_with_epoch,
+       ref_var    = vsdtc
+   );
+
+   // With edge case handling enabled (use with caution)
+   %derive_epoch(
+       sdtm_in     = sdtm.lb,
+       sdtm_out    = lb_with_epoch,
+       ref_var     = lbdtc,
+       handle_edge = Y
+   );
+  @endcode
+  
+  @see         CDISC SDTM Implementation Guide - SE Domain
+
+  
+---
+ 
+## `%line_swatch()` macro <a name="lineswatch-macros-7"></a> ######
 
 Macro Name:     line_swatch
 
@@ -137,7 +204,7 @@ Macro Name:     line_swatch
   
 ---
  
-## `%minimize_charlen()` macro <a name="minimizecharlen-macros-7"></a> ######
+## `%minimize_charlen()` macro <a name="minimizecharlen-macros-8"></a> ######
 
 /*
 `%minimize_charlen` is a macro to minimize the length of character variables
@@ -163,7 +230,7 @@ each variable's length accordingly.
   
 ---
  
-## `%rounddec()` macro <a name="rounddec-macros-8"></a> ######
+## `%rounddec()` macro <a name="rounddec-macros-9"></a> ######
 
 * MACRO NAME: rounrdDec
 *
@@ -186,7 +253,7 @@ each variable's length accordingly.
   
 ---
  
-## `%roundsig()` macro <a name="roundsig-macros-9"></a> ######
+## `%roundsig()` macro <a name="roundsig-macros-10"></a> ######
 
 * MACRO NAME: roundSig
 *
@@ -214,7 +281,7 @@ each variable's length accordingly.
   
 ---
  
-## `%symbol_swatch()` macro <a name="symbolswatch-macros-10"></a> ######
+## `%symbol_swatch()` macro <a name="symbolswatch-macros-11"></a> ######
 
 Macro Name:     symbol_swatch
 
@@ -230,7 +297,7 @@ Macro Name:     symbol_swatch
   
 ---
  
-## `%view_swatch()` macro <a name="viewswatch-macros-11"></a> ######
+## `%view_swatch()` macro <a name="viewswatch-macros-12"></a> ######
 
 Macro Name:     view_swatch
   Purpose:
@@ -246,7 +313,7 @@ Macro Name:     view_swatch
   
 ---
  
-## `%xpt2sas()` macro <a name="xpt2sas-macros-12"></a> ######
+## `%xpt2sas()` macro <a name="xpt2sas-macros-13"></a> ######
 
 `%xpt2sas` is a macro to convert xpt files into sas7bdat files.
 ### Parameters

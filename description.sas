@@ -1,8 +1,8 @@
 Type : Package
 Package : misc
 Title : misc package to place miscellaneous macros
-Version : 0.0.6
-Author : [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
+Version : 0.0.7
+Author : [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya],[Saikrishnareddy Yengannagari]
 Maintainer : [Yutaka Morioka],[Hiroki Yamanobe],[Ryo Nakaya]
 License : MIT
 Encoding : UTF8
