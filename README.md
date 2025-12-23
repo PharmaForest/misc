@@ -221,18 +221,20 @@ For full details and the complete implementations, please refer to the original 
                               (Use with caution - SDTM IG recommends null for pre-study records)
                           - N: leave EPOCH missing for out-of-range dates (SDTM IG compliant)
   ~~~~
- @note        This macro expects the SE (Subject Elements) dataset to be present
+  Notes:    
+ --        This macro expects the SE (Subject Elements) dataset to be present
               in the SDTM library as sdtm.se before calling this macro.  
- @note        SE domain must contain: USUBJID, SESTDY, SEENDY, SESTDTC, SEENDTC,
+ --        SE domain must contain: USUBJID, SESTDY, SEENDY, SESTDTC, SEENDTC,
               EPOCH, TAETORD  
- @note        Missing SEENDTC on non-terminal records is imputed from next SESTDTC  
- @note        Datetime comparison uses full precision when time component exists  
- @note        Boundary overlap handling: When a date falls on the boundary between two epochs  
-              (e.g., SEENDTC of one epoch equals SESTDTC of next), the later epoch is assigned based on the tightest SESTDTC match)  
- @note        Per SDTM IG: For Findings, use --DTC as ref_var; for Interventions/Events, use --STDTC  
- @note        Per SDTM IG: Pre-study records (before subject participation) should have null EPOCH.  
+ --        Missing SEENDTC on non-terminal records is imputed from next SESTDTC  
+ --        Datetime comparison uses full precision when time component exists  
+ --        Boundary overlap handling: When a date falls on the boundary between two epochs  
+            (e.g., SEENDTC of one epoch equals SESTDTC of next), the later epoch is assigned based on the tightest SESTDTC match)  
+ --        Per SDTM IG: For Findings, use --DTC as ref_var; for Interventions/Events, use --STDTC  
+ --        Per SDTM IG: Pre-study records (before subject participation) should have null EPOCH.  
               Use handle_edge=N (default) to comply with this guidance.  
-   
+
+     Usage Example:    
   ~~~sas
    // Derive EPOCH for AE domain using AESTDTC (Interventions/Events use --STDTC)
    %derive_epoch(
@@ -257,14 +259,14 @@ For full details and the complete implementations, please refer to the original 
    );
  ~~~
 
-
 Author: Saikrishnareddy Yengannagari  
 Date: 2025-12-23  
 Version: 1.0  
-
+---
 
 
 ## Version history
+0.0.7(23December2025) : Add view_swatch, line_swatch, symbol_swatch   
 0.0.6(27October2025) : Add view_swatch, line_swatch, symbol_swatch   
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
 0.0.4(23July2025)	: Add %color_swatch   
