@@ -1,0 +1,18 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA symbol_swatch
+
+
+NOTE: Wrote symbol_swatch (31 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: ODS Graphics is ON (width=640px, height=480px, format=SVG).
+NOTE: PROC SGPLOT data=symbol_swatch
+
+NOTE: PROC SGPLOT output written to: ./ods_output/sgplot.svg
+NOTE: ODS Graphics settings reset to defaults.
+NOTE: ODS Graphics image-name index reset.
+NOTE: ODS Graphics is ON (width=640px, height=480px, format=SVG).

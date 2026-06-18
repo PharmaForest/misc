@@ -1,0 +1,8 @@
+{
+  "bundle": "t005_view_swatch",
+  "source_file": "misc/macros/view_swatch.sas",
+  "source_blob_sha": "3b189b289a4fae931a01f2a4501a67be961c0578",
+  "source_commit": "e3a916ca8ea1e2cf94f7675967965d178697bd78",
+  "tier": "real_data",
+  "notes": "%view_swatch() macro (verbatim) assembles the 40-row DICTIONARY-table / SASHELP.V* cross-reference; PROC PRINT surfaces the assembled table."
+}

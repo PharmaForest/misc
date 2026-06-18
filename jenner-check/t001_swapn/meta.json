@@ -1,0 +1,8 @@
+{
+  "bundle": "t001_swapn",
+  "source_file": "misc/functions/swapn.sas",
+  "source_blob_sha": "6da12f7fbb6523876f90d3588fb6aca17c45f1a9",
+  "source_commit": "e3a916ca8ea1e2cf94f7675967965d178697bd78",
+  "tier": "real_data",
+  "notes": "PROC FCMP swapn() numeric-scalar swap subroutine (verbatim from the package) called from the README's documented DATA _null_ example; before/after PUT confirms the swap."
+}

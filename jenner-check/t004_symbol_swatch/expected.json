@@ -1,0 +1,19 @@
+{
+  "_captured_at": "2026-06-18T15:20:25.574387+00:00",
+  "_captured_run_id": "r_019edb50ae9a7302981d7aec997cf183",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "Wrote symbol_swatch (31 rows, 3 columns).",
+    "PROC SGPLOT data=symbol_swatch",
+    "PROC SGPLOT output written to: ./ods_output/sgplot.svg"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

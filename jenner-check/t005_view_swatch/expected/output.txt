@@ -1,0 +1,44 @@
+
+  Obs               Dictionary    SASHELP
+-----  -----------------------  ---------
+    1  TABLES                   VTABLE
+    2  COLUMNS                  VCOLUMN
+    3  XATTRS                   VXATTR
+    4  TITLES                   VTITLE
+    5  EXTFILES                 VEXTFL
+    6  LIBNAMES                 VLIBNAM
+    7  MACROS                   VMACRO
+    8  CATALOGS                 VCATALG
+    9  CHECK_CONSTRAINTS        VCHKCON
+   10  CONSTRAINT_COLUMN_USAGE  VCNCOLU
+   11  CONSTRAINT_TABLE_USAGE   VCNTABU
+   12  DATAITEMS                VDATAIT
+   13  DESTINATIONS             VDEST
+   14  DICTIONARIES             VDCTNRY
+   15  ENGINES                  VENGINE
+   16  FILTERS                  VFILTER
+   17  FORMATS                  VFORMAT
+   18  FUNCTIONS                VFUNC
+   19  GOPTIONS                 VGOPT
+   20  INDEXES                  VINDEX
+   21  INFOMAPS                 VINFOMP
+   22  LOCALES                  VLOCALE
+   23  MEMBERS                  VMEMBER
+   24  OPTIONS                  VOPTION
+   25  PROMPTS                  VPROMPT
+   26  PROMPTSXML               VPRMXML
+   27  REFERENTIAL_CONSTRAINTS  VREFCON
+   28  REMEMBER                 VREMEMB
+   29  STYLES                   VSTYLE
+   30  TABLE_CONSTRAINTS        VTABCON
+   31  VIEWS                    VVIEW
+   32  VIEW_SOURCES             VSVIEW
+   33                           VALLOPT
+   34                           VCFORMAT
+   35                           VSACCESS
+   36                           VSCATALOG
+   37                           VSLIB
+   38                           VSTABLE
+   39                           VSTABVW
+   40                           VSVIEW
+

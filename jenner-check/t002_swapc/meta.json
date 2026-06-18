@@ -1,0 +1,8 @@
+{
+  "bundle": "t002_swapc",
+  "source_file": "misc/functions/swapc.sas",
+  "source_blob_sha": "9c08c2800acaab1b50d68b2b8fc05b5bdbeb4930",
+  "source_commit": "e3a916ca8ea1e2cf94f7675967965d178697bd78",
+  "tier": "real_data",
+  "notes": "PROC FCMP swapc() character-scalar swap subroutine (verbatim from the package) called from the README's documented DATA _null_ example; before/after PUT confirms the swap."
+}

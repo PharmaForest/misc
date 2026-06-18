@@ -1,0 +1,21 @@
+{
+  "_captured_at": "2026-06-18T15:20:25.574387+00:00",
+  "_captured_run_id": "r_019edb50abee76618a35d2fbee272cb8",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "raw=1.234 res=1.23",
+    "raw=12.34 res=12.3",
+    "raw=123.4 res=123",
+    "raw=1234 res=1230",
+    "Wrote sig (4 rows, 2 columns)."
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

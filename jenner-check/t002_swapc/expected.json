@@ -1,0 +1,19 @@
+{
+  "_captured_at": "2026-06-18T15:20:25.574387+00:00",
+  "_captured_run_id": "r_019edb509d43766387cec7c33a7304e2",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "Subroutine swapc stored to work.funcs.misc.",
+    "Before: s=foo t=bar",
+    "After : s=bar t=foo"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

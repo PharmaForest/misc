@@ -1,0 +1,8 @@
+{
+  "bundle": "t004_symbol_swatch",
+  "source_file": "misc/macros/symbol_swatch.sas",
+  "source_blob_sha": "539bb048d2e47f39a17c4ba28052060a74d30a1d",
+  "source_commit": "e3a916ca8ea1e2cf94f7675967965d178697bd78",
+  "tier": "real_data",
+  "notes": "%symbol_swatch() macro (verbatim) builds the 31-row marker-symbol reference table and renders it with PROC SGPLOT (PNG + SVG)."
+}
