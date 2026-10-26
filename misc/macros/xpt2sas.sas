@@ -81,9 +81,30 @@ libname sas_out "&outdir." ;
 	data _null_ ;
 		set work._tmp02 ;
 		if _N_=&i. ;
-		call symput("file_name",trim(left(VARNM))) ;
+		/*change made by Dave Kestner*/
+        /*call symput("file_name",trim(left(VARNM))) ;*/        
+         call symput("file_name_w_ext",strip(VAR));
+        /*end of change made by Dave Kestner*/
 	run ;
-	libname xpt_in xport "&indir.\&file_name..xpt" ;
+
+    /*ORIGINAL LIBNAME ON GITHUB*/
+    /*libname xpt_in xport "&indir.\&file_name..xpt" ;*/
+
+    
+    /*change made by Dave Kestner*/
+    /*added logic to accomodate Linux environments*/
+    %if %sysfunc(find(upcase(&sysscp.), WIN)) gt 0 %then %do;
+        %let slash = \;
+    %end;
+    %else %do;
+        %let slash = /;
+    %end;
+
+    libname xpt_in xport "&indir.&slash.&file_name_w_ext." ;
+    /*end of change made by Dave Kestner*/
+
+
+
 	proc copy in=xpt_in out=sas_out ;
 	run ;
 	libname xpt_in clear ;
