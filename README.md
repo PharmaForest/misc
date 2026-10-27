@@ -1,4 +1,4 @@
-# misc (latest version 0.0.7 on 23December2025)
+# misc (latest version 0.0.8 on 27October2026)
 A SAS package to place miscellaneous macros, functions, etc.  
 <img src="./misc_logo_small.png" width="250"/>
 
@@ -18,8 +18,7 @@ Sample code:
 ~~~  
 
 Author: Ryo Nakaya  
-Date: 2025-06-28  
-Version: 0.1  
+Date: 2026-10-27  
 
 ## %minimize_charlen() macro
 Purpose:     The macro analyzes all character variables in the dataset,  determines the maximum length actually used, and alters the table to adjust each variable's length accordingly.
@@ -267,13 +266,14 @@ Version: 1.0
 
 
 ## Version history
+0.0.8(27October2026) : Modified %xpt2sas to address linux directory   
 0.0.7(23December2025) : Add derive_epoch 
 0.0.6(27October2025) : Add view_swatch, line_swatch, symbol_swatch   
 0.0.5(26August2025) : Add swapn routine, swapc routine, swapn_vec routine, swapc_vec routine   
 0.0.4(23July2025)	: Add %color_swatch   
 0.0.3(03July2025)	: Add %rounddec, roundsig  
 0.0.2(02July2025)	: Add %minimize_charlen  
-0.0.1(28June2025)	: Initial version 　<br>
+0.0.1(28June2025)	: Initial version 
 
 
 ---
